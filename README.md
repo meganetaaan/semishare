@@ -1,5 +1,7 @@
 # semishare
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/meganetaaan/semishare.svg)](https://greenkeeper.io/)
+
 > Nuxt.js project
 
 ## Build Setup
