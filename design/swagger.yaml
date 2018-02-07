@@ -1,0 +1,111 @@
+swagger: '2.0'
+info:
+  description: 'This is a server for managing semi data.'
+  version: '0.1.0'
+  title: 'semishare server'
+  contact:
+    email: 'ishikawa.s.1027@gmail.com'
+  license:
+    name: 'MIT'
+    url: 'https://opensource.org/licenses/MIT'
+host: 'meganetaaan.jp'
+basePath: '/semishare/v1'
+definitions:
+  Semi:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+        example: 'How to hifive'
+      streams:
+        type: array
+        items:
+          $ref: '#/definitions/Stream'
+      decks:
+        type: array
+        items:
+          $ref: '#/definitions/Deck'
+      comments:
+        type: array
+        items:
+          $ref: '#/definitions/Comment'
+  Deck:
+    type: object
+    properties:
+      id:
+        type: string
+      path:
+        type: string
+  Comment:
+    type: object
+    properties:
+      id:
+        type: string
+      user:
+        $ref: '#definitions/User'
+      text:
+        type: string
+  User:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+  Stream:
+    type: object
+    properties:
+      id:
+        type: string
+      path:
+        type: string
+paths:
+  /semi:
+    get:
+      summary: |
+        Gets Semi objects.
+      parameters:
+        -
+          name: id
+          in: path
+          description: Size of array
+          required: true
+          type: number
+          format: double
+      responses:
+        200:
+          description: Successful response
+          schema:
+            title: ArrayOfSemis
+            type: array
+            items:
+              $ref: '#/definitions/Semi'
+    post:
+      summary: |
+        Creates a new Semi object.
+      parameters:
+      - in: 'body'
+        name: 'body'
+        descrpiton: 'Semi object'
+        required: true
+        schema:
+          $ref: '#/definitions/Semi'
+      responses:
+        405:
+          description: 'Invalid input'
+    delete:
+      summary: |
+        Deletes a Semi.
+      parameters:
+      - name: 'semiId'
+        in: 'path'
+        description: 'Semi id to delete'
+        required: true
+        type: string
+      responses:
+        400:
+          description: 'Invalid ID supplied'
+        404:
+          description: 'Semi not found'

@@ -15,10 +15,12 @@
     "axios": "^0.16.2",
     "cross-env": "^5.0.1",
     "express": "^4.15.3",
-    "letsencrypt-express": "2.x",
+    "greenlock-express": "2.x",
     "nuxt": "^1.0.0-rc3",
     "peer": "^0.2.8",
-    "source-map-support": "^0.4.15"
+    "peerjs": "^0.3.14",
+    "source-map-support": "^0.4.15",
+    "vue-no-ssr": "^0.2.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

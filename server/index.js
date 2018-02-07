@@ -1,5 +1,6 @@
 import express from 'express'
 import { Nuxt, Builder } from 'nuxt'
+import { ExpressPeerServer } from 'peer'
 
 import api from './api'
 
@@ -29,5 +30,6 @@ if (config.dev) {
 app.use(nuxt.render)
 
 // Listen the server
-app.listen(port, host)
+const server = app.listen(port, host)
+app.use('/peerjs', ExpressPeerServer(server))
 console.log('Server listening on ' + host + ':' + port) // eslint-disable-line no-console
