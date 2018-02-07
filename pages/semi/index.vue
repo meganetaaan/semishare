@@ -1,16 +1,19 @@
 <template>
   <section class="semi">
     <web-rtc-client />
+    <chat />
   </section>
 </template>
 
 <script>
 import axios from '~/plugins/axios'
 import WebRtcClient from '~/components/WebRtcClient.vue'
+import Chat from '~/components/Chat.vue'
 
 export default {
   components: {
-    WebRtcClient
+    WebRtcClient,
+    Chat
   },
   async asyncData () {
     let { data } = await axios.get('/api/users')

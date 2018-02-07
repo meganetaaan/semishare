@@ -93,7 +93,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 video {
-  width: 240px;
-  height: 180px;
+  width: 100%;
+  height: auto;
 }
 </style>
