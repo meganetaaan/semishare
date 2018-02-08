@@ -2,6 +2,9 @@
   <section class="semi">
     <web-rtc-client />
     <chat />
+    <no-ssr>
+      <deck />
+    </no-ssr>
   </section>
 </template>
 
@@ -9,11 +12,13 @@
 import axios from '~/plugins/axios'
 import WebRtcClient from '~/components/WebRtcClient.vue'
 import Chat from '~/components/Chat.vue'
+import Deck from '~/components/PDFViewer.vue'
 
 export default {
   components: {
     WebRtcClient,
-    Chat
+    Chat,
+    Deck
   },
   async asyncData () {
     let { data } = await axios.get('/api/users')
