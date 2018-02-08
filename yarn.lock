@@ -2,6 +2,12 @@
 # yarn lockfile v1
 
 
+"@nuxtjs/vuetify@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/vuetify/-/vuetify-0.4.0.tgz#da77a89efd2054c6d15faccc024c7df4af68985b"
+  dependencies:
+    vuetify "1.0.0-alpha.1"
+
 abbrev@1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.0.tgz#d0554c2256636e2f56e7c2e5ad183f859428d81f"
@@ -6010,9 +6016,9 @@ vue@~2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.4.2.tgz#a9855261f191c978cc0dc1150531b8d08149b58c"
 
-vuetify@^0.17.7:
-  version "0.17.7"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-0.17.7.tgz#068c8210473643d45166ef9c5f6eb0ecf26bb5a5"
+vuetify@1.0.0-alpha.1:
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-1.0.0-alpha.1.tgz#14d78be8066ba1c82ad5299355a26122b63e5c48"
 
 vuex@^2.3.1:
   version "2.3.1"

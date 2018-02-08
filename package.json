@@ -12,6 +12,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
+    "@nuxtjs/vuetify": "^0.4.0",
     "axios": "^0.16.2",
     "cross-env": "^5.0.1",
     "express": "^4.15.3",
@@ -21,8 +22,7 @@
     "peerjs": "^0.3.14",
     "source-map-support": "^0.4.15",
     "vue-no-ssr": "^0.2.2",
-    "vue-pdf": "^3.2.1",
-    "vuetify": "^0.17.7"
+    "vue-pdf": "^3.2.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

@@ -2,7 +2,6 @@
   <section class="semi">
     <web-rtc-client />
     <chat />
-    <deck />
   </section>
 </template>
 
