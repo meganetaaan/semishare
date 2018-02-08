@@ -1,7 +1,11 @@
 module.exports = {
   plugins: [
     {
-      src: '~/plugins/vue-pdf', ssr: false
+      src: '~/plugins/vue-pdf',
+      ssr: false
+    },
+    {
+      src: '~/plugins/vuetify'
     }
   ],
   /*

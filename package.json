@@ -21,7 +21,8 @@
     "peerjs": "^0.3.14",
     "source-map-support": "^0.4.15",
     "vue-no-ssr": "^0.2.2",
-    "vue-pdf": "^3.2.1"
+    "vue-pdf": "^3.2.1",
+    "vuetify": "^0.17.7"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

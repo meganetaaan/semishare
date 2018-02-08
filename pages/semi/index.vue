@@ -2,9 +2,7 @@
   <section class="semi">
     <web-rtc-client />
     <chat />
-    <no-ssr>
-      <deck />
-    </no-ssr>
+    <deck />
   </section>
 </template>
 
