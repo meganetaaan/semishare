@@ -1,9 +1,19 @@
 <template>
   <div class="chat-comments">
+    <v-list two-line>
+      <template v-for="item in items">
+        <v-list-tile avatar v-bind:key="item.title" @click="">
+          <v-list-tile-avatar>
+            <img v-bind:src="item.avatar">
+          </v-list-tile-avatar>
+          <v-list-tile-content>
+            <v-list-tile-title v-html="item.userId"></v-list-tile-title>
+            <v-list-tile-sub-title v-html="item.text"></v-list-tile-sub-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </template>
+    </v-list>
     <ul>
-      <li v-for="comment in items" >
-        <ChatComment :key="comment.id" :userId="comment.userId" :text="comment.text"/>
-      </li>
     </ul>
   </div>
 </template>

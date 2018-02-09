@@ -1,12 +1,14 @@
 <template>
   <div class="web-rtc-client">
-    <video ref="localVideo" autoplay style=""></video>
+    <span>
+      <input v-model="peerId" placeholder="peer id">
+      <button @click="onClick">Call</button>
+    </span>
+    <span>id: {{myId}}</span>
+    <video class="local-video" ref="localVideo" autoplay style=""></video>
     <template v-for="s of streams">
-      <video :key="s.id" :ref="s.id" autoplay style=""></video>
+      <video class="remote-video" :key="s.id" :ref="s.id" autoplay style=""></video>
     </template>
-    <div>id: {{myId}}</div>
-    <input v-model="peerId" placeholder="peer id">
-    <button @click="onClick">Call</button>
   </div>
 </template>
 
@@ -92,7 +94,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-video {
+.local-video {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.remote-video {
+  position: absolute;
+  z-index: 1;
+  bottom: 30px;
+  left: 30px;
   width: 30%;
   height: auto;
 }

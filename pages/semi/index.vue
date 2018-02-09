@@ -1,7 +1,22 @@
 <template>
   <section class="semi">
-    <web-rtc-client />
-    <chat />
+    <v-layout row wrap>
+      <v-flex sm12 md8>
+        <v-card>
+          <web-rtc-client />
+        </v-card>
+      </v-flex>
+      <v-flex sm12 md4>
+        <v-card>
+          <chat />
+        </v-card>
+      </v-flex>
+      <v-flex sm12 md6>
+        <v-card>
+          <deck />
+        </v-card>
+      </v-flex>
+    </v-layout>
   </section>
 </template>
 
