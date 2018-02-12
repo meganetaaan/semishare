@@ -1,11 +1,12 @@
 <template>
   <div class="web-rtc-client">
-    <span>
+    <!-- <span>
       <input v-model="peerId" placeholder="peer id">
       <button @click="onClick">Call</button>
-    </span>
+    </span> -->
     <span>id: {{myId}}</span>
-    <video class="local-video" ref="localVideo" autoplay style=""></video>
+    <video v-if="localStream" class="local-video" ref="localVideo" autoplay style=""></video>
+    <div v-else class="local-video">no presenter</div>
     <template v-for="s of streams">
       <video class="remote-video" :key="s.id" :ref="s.id" autoplay style=""></video>
     </template>
@@ -31,8 +32,20 @@ export default {
       streams: []
     }
   },
+  props: {
+    isPresenter: {
+      type: Boolean,
+      default: false
+    },
+    presenterPeerId: {
+      tpye: String,
+      default: ''
+    }
+  },
   mounted () {
-    this.startVideoStream()
+    if (this.isPresenter) {
+      this.startVideoStream()
+    }
     peer.on('open', id => {
       this.myId = id
     })

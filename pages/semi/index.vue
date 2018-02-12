@@ -3,7 +3,7 @@
     <v-layout row wrap>
       <v-flex sm12 md8>
         <v-card>
-          <web-rtc-client />
+          <web-rtc-client :presenter-peer-id="presenterPeerId" :is-presenter="isPresenter"/>
         </v-card>
       </v-flex>
       <v-flex sm12 md4>
@@ -32,13 +32,33 @@ export default {
     Chat,
     Deck
   },
+  data () {
+    return {
+      presenterPeerId: '',
+      isPresenter: true
+    }
+  },
   async asyncData () {
-    let { data } = await axios.get('/api/users')
-    return { users: data }
+    let { data } = await axios.get('/api/semis')
+    const isPresenter = data.length === 0
+    const presenterPeerId = isPresenter ? '' : data.peerId
+    /*
+    if (data.length === 0) {
+      axios.put('api/smeis', {
+
+      })
+    }
+    */
+    console.debug(data)
+    return {
+      semi: data[0],
+      presenterPeerId,
+      isPresenter
+    }
   },
   head () {
     return {
-      title: 'Users'
+      title: 'Semi'
     }
   }
 }

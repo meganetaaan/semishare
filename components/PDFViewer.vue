@@ -1,6 +1,6 @@
 <template>
   <div class="pdf-viewer">
-    <pdf :page="page" :src="src"></pdf>
+    <!-- <pdf :page="page" :src="src"></pdf> -->
   </div>
 </template>
 

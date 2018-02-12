@@ -22,14 +22,14 @@
             <v-list-tile-title v-text="item.title"></v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile>
+        <v-spacer />
+        <v-list-tile @click.stop="miniVariant = !miniVariant" >
+          <v-list-tile-action>
+            <v-icon>remove</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title v-text="minimize"></v-list-tile-title>
           </v-list-tile-content>
-          <v-list-tile-title v-text="minimize"></v-list-tile-title>
-            <v-btn
-              icon
-              @click.stop="miniVariant = !miniVariant"
-            >
-            </v-btn>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
@@ -66,6 +66,7 @@
           { icon: 'apps', title: 'Welcome', to: '/' },
           { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
         ],
+        minimize: 'minimize',
         miniVariant: false,
         right: true,
         rightDrawer: false,
