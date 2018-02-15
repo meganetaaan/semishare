@@ -26,9 +26,6 @@ import WebRtcClient from '~/components/WebRtcClient.vue'
 import Chat from '~/components/Chat.vue'
 import Deck from '~/components/PDFViewer.vue'
 
-/**
- * Can create a semi from this page.
- */
 export default {
   components: {
     WebRtcClient,
@@ -42,12 +39,12 @@ export default {
     }
   },
   async asyncData (vm) {
-    let { data } = await axios.get('/api/semis')
+    const params = vm.params
+    let { data } = await axios.get('/api/semis/' + params.id)
     const presenterPeerId = vm.isPresenter ? '' : data.peerId
     /*
     if (data.length === 0) {
       axios.put('api/smeis', {
-
       })
     }
     */
