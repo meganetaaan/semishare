@@ -1,5 +1,6 @@
 <template>
   <div class="pdf-viewer">
+    pdfpdfpdf
     <!-- <pdf :page="page" :src="src"></pdf> -->
   </div>
 </template>
@@ -23,6 +24,5 @@ export default {
 .pdf-viewer {
   width: auto;
   height: 100%;
-  background-color: #ddd;
 }
 </style>

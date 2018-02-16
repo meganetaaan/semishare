@@ -15,6 +15,8 @@
 
 <script>
 import config from '../assets/config'
+import { mapMutations } from 'vuex'
+
 if (process.browser) {
   var Peer = require('peerjs')
   var peer = new Peer({ key: config.apiKey })
@@ -100,7 +102,10 @@ export default {
       }
       const call = peer.call(peerId, this.localStream)
       this.setupCall(call)
-    }
+    },
+    ...mapMutations({
+      add: 'semis/add'
+    })
   }
 }
 </script>

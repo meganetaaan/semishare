@@ -3,6 +3,13 @@ import { Router } from 'express'
 const router = Router()
 
 const semiMap = new Map()
+semiMap.set(1, {
+  id: ';asdkfjliuear',
+  presenter: null,
+  audiences: [],
+  comments: [],
+  decks: []
+})
 
 /* GET semis listing. */
 router.get('/semis', function (req, res, next) {
@@ -11,8 +18,9 @@ router.get('/semis', function (req, res, next) {
 
 /* GET semi by ID. */
 router.get('/semis/:id', function (req, res, next) {
+  console.log(JSON.stringify(req.params))
   const id = parseInt(req.params.id)
-  if (id >= 0 && id < semiMap.length) {
+  if (semiMap.has(id)) {
     res.json(semiMap.get(id))
   } else {
     res.sendStatus(404)
